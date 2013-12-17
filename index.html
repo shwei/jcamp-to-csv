@@ -1,0 +1,104 @@
+<!doctype html>
+<meta charset="utf-8" xmlns="http://www.w3.org/1999/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metadata File Converter from JCAMP to REDCap CSV</title>
+
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans" type="text/css" />
+<!--<link rel="stylesheet" href="css/docs.css" type="text/css"/>-->
+<link rel="stylesheet" href="css/app.css" type="text/css"/>
+
+<div class="container">
+    <div id="panel panel-default">
+        <div class="row">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>JCAMP File Converter</h1>
+                    <p>It is a simple application that converts image metadata in JCAMP format to CSV format.
+                </div>
+            </div>
+            <div class="panel-body" style="margin: 15px;">
+                <div class="page-header">
+                    <h1 id="step1" style="padding-top: 0px">1. Select A Folder</h1>
+                </div>
+
+                <p><b>Choose a folder</b> that contains JCAMP files. Once this step is done, <b>step 2</b> will be available.
+
+                <div>
+                    <input type="file" multiple webkitdirectory mozdirectory class="filestyle" data-input="false"
+                           data-classButton="btn btn-primary generate-btn" name="files[]"
+                           alt="Browse" title="Browse" data-buttonText="Browse Folder">
+                </div>
+
+                <h3 id="progress">Progress <span class="current-folder"></span></h3>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div>
+                            <span class="process-progress-status">0% done.</span>
+                            <span class="process-progress-file"> </span>
+                        </div>
+                        <div class="progress progress-striped active">
+                            <div id="process-progress" class="progress-bar progress-bar-success" role="progressbar"
+                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                <span class="sr-only"><span class="process-progress-percentage">0</span>% Complete (success)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="generate-output">
+                    <div class="page-header disabled">
+                        <h1 id="step2">2. Generate CSV File <span style="display: inline"> - disabled until <b>step 1</b> is completed.</span></h1>
+                    </div>
+
+                    <p class="disabled">Click on the Generate button to generate a file. Then the newly generated file will be placed in the
+                        Result Files section. The file can then be opened, viewed, downloaded, and deleted. Generated files are
+                        kept until they are manually deleted or Chrome browser refreshes its cache.
+
+                    <div>
+                        <button type="button" class="btn btn-primary generate-btn" onclick="generateResultCsvFile()"
+                                alt="Generate" title="Generate" disabled="true">
+                            Generate
+                        </button>
+                    </div>
+                </div>
+
+                <h3 id="result-file">Result Files</h3>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <label for="files">Directory: <span id="cwd"></span></label>
+                        <div id="files" class="large">
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- end container -->
+<div id="push"></div>
+</div> <!-- end wrap -->
+
+<footer>
+    <div id="footer">
+        <div class="container">
+            <p class="text-muted credit pull-right">jcamp-to-csv v 1.0.0</p>
+        </div>
+    </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//underscorejs.org/underscore-min.js"></script>
+<!--<script src="js/filer.js"></script>-->
+<script src="js/filer.min.js"></script>
+<script src="js/bootstrap-filestyle.min.js"></script>
+<script src="js/moment.min.js" defer></script>
+<script src="js/logger.js" defer></script>
+<script src="js/dnd.js" defer></script>
+<script src="js/naturalSort.js" defer></script>
+
+<script src="js/filer-wrapper.js" defer></script>
+<script src="js/app.js" defer></script>
