@@ -304,6 +304,16 @@ function addListeners() {
 }
 
 window.addEventListener('DOMContentLoaded', function (e) {
+    var isChrome = !!window.chrome;
+
+    if (!isChrome) {
+        $('#non-chrome-warn').show();
+        $('#operation-steps').remove();
+        $('#nonChromeModal').modal({show: true});
+        return;
+    }
+    $('#non-chrome-warn').hide();
+
     addListeners();
 
     if (filer && !filer.isOpen) {

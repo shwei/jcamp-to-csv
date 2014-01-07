@@ -18,19 +18,27 @@
                     <div class="container">
                         <h1>JCAMP-DX File Converter</h1>
                         <p>It is a simple application that converts image metadata in JCAMP-DX format to CSV format.
+
+                        <div class="alert alert-danger" id="non-chrome-warn" style="display: none;">
+                            Please use the <b>latest</b> Chrome browser. Get it at
+                            <a href="https://www.google.com/chrome" target="_blank">https://www.google.com/chrome</a>
+                        </div>
                     </div>
                 </div>
-                <div class="panel-body" style="margin: 15px;">
+                <div class="panel-body" style="margin: 15px;" id="operation-steps">
                     <div class="page-header">
                         <h1 id="step1" style="padding-top: 0px">1. Select A Folder</h1>
                     </div>
 
-                    <p><b>Choose a folder</b> that contains JCAMP files. Once this step is done, <b>step 2</b> will be available.
+                    <p>
+                        <b>Choose a folder</b> that contains JCAMP files. Once this step is done, <b>step 2</b> will be
+                        available.
+                    </p>
 
                     <div>
                         <input type="file" multiple webkitdirectory mozdirectory class="filestyle" data-input="false"
-                               data-classButton="btn btn-primary generate-btn" name="files[]"
-                               alt="Browse" title="Browse" data-buttonText="Browse Folder">
+                               data-classButton="btn btn-primary generate-btn" name="files[]" id="input-folder"
+                               alt="Browse" title="Browse" data-buttonText="Browse to Folder">
                     </div>
 
                     <h3 id="progress">Progress <span class="current-folder"></span></h3>
@@ -54,9 +62,10 @@
                             <h1 id="step2">2. Generate CSV File <span style="display: inline"> - disabled until <b>step 1</b> is completed.</span></h1>
                         </div>
 
-                        <p class="disabled">Click on the Generate button to generate a file. Then the newly generated file will be placed in the
-                            Result Files section. The file can then be opened, viewed, downloaded, and deleted. Generated files are
-                            kept until they are manually deleted or Chrome browser refreshes its cache.
+                        <p class="disabled">Click on the Generate button to generate a file. Then the newly generated
+                            file will be placed under the Result Files section. The file can then be opened, viewed,
+                            downloaded, and deleted. Generated files are kept until they are manually deleted or
+                            Chrome browser refreshes its cache.
 
                         <div>
                             <button type="button" class="btn btn-primary generate-btn" onclick="generateResultCsvFile()"
@@ -90,12 +99,32 @@
     </div>
 </footer>
 
+<!-- Modal -->
+<div class="modal fade" id="nonChromeModal" tabindex="-1" role="dialog" aria-labelledby="nonChromeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="nonChromeModalLabel"><b>Chrome Browser Is Required</b></h4>
+            </div>
+            <div class="modal-body">
+                <b>HTML 5 File System API,</b> which provides client-side/browser-side file system operations, is used in
+                this application. Currently, <b>only Chrome browser</b> supports such implements, so please download the
+                <b>latest</b> version at
+                <a href="https://www.google.com/chrome" target="_blank">https://www.google.com/chrome</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script src="//underscorejs.org/underscore-min.js"></script>
 <!--<script src="js/filer.js"></script>-->
 <script src="js/filer.min.js"></script>
-<script src="js/bootstrap-filestyle.min.js"></script>
 <script src="js/moment.min.js" defer></script>
 <script src="js/logger.js" defer></script>
 <script src="js/dnd.js" defer></script>
@@ -103,3 +132,4 @@
 
 <script src="js/filer-wrapper.js" defer></script>
 <script src="js/app.js" defer></script>
+<script src="js/bootstrap-filestyle.min.js"></script>

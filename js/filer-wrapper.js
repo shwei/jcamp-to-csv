@@ -97,7 +97,7 @@ function renderEntries(resultEntries) {
 
     if (!resultEntries.length) {
         var li = document.createElement('li');
-        li.innerHTML = 'No result files. Click on Generate Result File button!';
+        li.innerHTML = 'No result files. Click on Generate Result File button when available!';
         fileList.appendChild(li);
         return;
     }
