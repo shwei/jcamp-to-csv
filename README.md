@@ -18,7 +18,7 @@ Supported Browsers
 
 * Chrome
 
-The library, filer.js which is utilized in the application only works in Chrome. Therefore, the application only works
+The library filer.js that leverages HTML5 Filesystem API is only supported in Chrome and is utilized in this application. Therefore, the application only works
 in Chrome. Maybe at some point we should turn this application into a Chrome Extension.
 
 Getting started
