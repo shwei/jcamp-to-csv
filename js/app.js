@@ -301,6 +301,9 @@ function generateResultCsvFile() {
 //  Start the app
 function addListeners() {
     importButton.addEventListener('change', onFileSelect, false);
+    $('[data-toggle="popover"]').popover({
+//        'placement': 'bottom'
+    });
 }
 
 window.addEventListener('DOMContentLoaded', function (e) {
