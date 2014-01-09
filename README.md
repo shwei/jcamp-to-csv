@@ -7,9 +7,9 @@ It is a simple application that converts image metadata in JCAMP-DX format to CS
 
 This project depends on Eric Bidelman's work on filer.js project. https://github.com/ebidel/filer.js
 
-Thank you very much Eric Bidelman!
+Thank you very much [Eric Bidelman](https://github.com/ebidel)!
 
-It also includes works from Kevin Jantzer <https://gist.github.com/kjantzer/7027717> and Jim Palmer
+It also includes works from [Kevin Jantzer](https://github.com/kjantzer), <https://gist.github.com/kjantzer/7027717> and [Jim Palmer](https://github.com/overset),
 (https://github.com/overset/javascript-natural-sort) for natural sorting.
 
 
