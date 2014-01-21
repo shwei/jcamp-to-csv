@@ -1,4 +1,4 @@
-jcamp-to-csv
+JCAMP DX To CSV
 ============
 
 It is a simple application that converts image metadata in JCAMP-DX format to CSV format. This is a two-step process:
