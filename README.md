@@ -30,7 +30,7 @@ Open index.html in Chrome.
 
 Demo Site
 -----
-http://jcamp-to-csv.appspot.com/
+http://shwei.github.io/jcamp-to-csv/
 
 
 Background
