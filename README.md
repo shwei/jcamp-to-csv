@@ -1,17 +1,7 @@
 JCAMP DX To CSV
 ============
 
-It is a simple application that converts image metadata in JCAMP-DX format to CSV format. This is a two-step process:
-1. Select a folder that contains JCAMP files
-2. After a folder is selected, a CSV file can be then generated.
-
-This project depends on Eric Bidelman's work on filer.js project. https://github.com/ebidel/filer.js
-
-Thank you very much [Eric Bidelman](https://github.com/ebidel)!
-
-It also includes works from [Kevin Jantzer](https://github.com/kjantzer), <https://gist.github.com/kjantzer/7027717> and [Jim Palmer](https://github.com/overset),
-(https://github.com/overset/javascript-natural-sort) for natural sorting.
-
+It is a simple application that converts image metadata in JCAMP-DX format to CSV format. 
 
 Supported Browsers
 ------------------
@@ -26,11 +16,15 @@ Getting started
 
 Usage
 -----
-Open index.html in Chrome.
+1. Open index.html or http://shwei.github.io/jcamp-to-csv/ in Chrome.
+2. Select a folder that contains JCAMP files. Then click OK.
+![Select a folder that contains JCAMP files](../assets/step_1.jpg)
+3. When the progress reaches 100%, go to Generate CSV file step and select the Generate button.
+4. A result file will be generated with a timestamp in the filename. You can download or remove the result file.
+![Result files](../assets/step_2.jpg)
 
 Demo Site
 -----
-http://shwei.github.io/jcamp-to-csv/
 
 Background
 =======
@@ -40,3 +34,13 @@ and published it in the paper, JCAMP-DX: A Standard Form for Exchange of Infrare
  Applied Spectroscopy in 1988.
 
 http://www.ingentaconnect.com/content/sas/sas/1988/00000042/00000001/art00030?token=003d10f941333c4a2f7a3f38765749675d4855346f4f6d4e222435fcbddbf
+
+Credits
+-----
+This project depends on Eric Bidelman's work on filer.js project. https://github.com/ebidel/filer.js
+
+Thank you very much [Eric Bidelman](https://github.com/ebidel)!
+
+It also includes works from [Kevin Jantzer](https://github.com/kjantzer), <https://gist.github.com/kjantzer/7027717> and [Jim Palmer](https://github.com/overset),
+(https://github.com/overset/javascript-natural-sort) for natural sorting.
+

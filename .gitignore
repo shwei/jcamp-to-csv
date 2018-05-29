@@ -1,3 +1,4 @@
 .idea
+.*
 parameters.csv
 req.txt
